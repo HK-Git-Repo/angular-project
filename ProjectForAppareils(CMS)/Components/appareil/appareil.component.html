@@ -1,0 +1,17 @@
+<li [ngClass]="{
+    'list-group-item' : true,
+    'list-group-item-success' : getColor() === 'green',
+    'list-group-item-danger' : getColor() === 'red'
+}"    
+>
+    <h5 [ngStyle]="{color : getColor()}" >
+        Appareil : {{ appareilName }} -- Status : {{ appareilStatus }}</h5>
+    <button [ngClass]="{
+        'btn' : true,
+        'btn-success' : appareilStatus === 'Disabled',
+        'btn-danger' : appareilStatus === 'Enabled'
+    }"
+    (click)="appareilStatus === 'Disabled' ? ON() : OFF()"
+    >{{ appareilStatus === 'Disabled' ? 'Enable' : 'Disable' }}</button>
+    <a id="details-link" [routerLink]="[ID]">Show Details</a>
+</li>

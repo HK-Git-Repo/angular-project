@@ -1,0 +1,21 @@
+<div class="col-xs-12">
+    <div>
+        <h3>Mes Appareils</h3>
+        <p>Mise à jour : {{ lastUpdate | date | uppercase }}</p>
+        <ol class="list-group">
+            <app-appareil *ngFor="let appareil of appareils; let i = index"
+            [indexOfAppareil]="i" 
+            [appareilName]="appareil.name" 
+            [appareilStatus]="appareil.status"
+            [ID]="appareil.id"
+            ></app-appareil>
+        </ol> <br>
+        <div class="d-flex justify-content-evenly">
+            <button class="btn btn-success"  (click)="onEnable()">All Enabled</button>
+            <button class="btn btn-danger"  (click)="onDisable()">All Disabled</button>
+            <button class="btn btn-secondary"  (click)="onSave()">Save All</button>
+            <button class="btn btn-primary"  (click)="onFetch()">Show All</button>
+        </div>
+    </div>
+    
+</div>

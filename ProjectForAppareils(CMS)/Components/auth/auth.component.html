@@ -1,0 +1,4 @@
+<h2>Authetification</h2>
+<button class="btn btn-primary"
+    (click)="authStatus ? onSignOut() : onSignIn()"
+>{{ authStatus ? 'Se déconnecter' : 'Se connecter' }}</button>
